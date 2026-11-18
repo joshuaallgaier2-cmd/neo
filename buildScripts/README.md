@@ -131,6 +131,7 @@ It is **not** used for the daily development workflow, which uses native ES modu
 Internal shared libraries used by the scripts above.
 
 - `copyFile.mjs` / `copyFolder.mjs`: File system operations.
+- `measure-esm-vs-bundled.mjs`: Reproducible HTTP/2 and HTTP/3 `dist/esm`, `dist/production`, and `esbuild --splitting` measurement harness.
 - `minifyFile.mjs` / `minifyHtml.mjs`: Terser/HTMLMinifier wrappers.
 - `Sanitizer.mjs`: Input sanitization for CLI prompts.
 
