@@ -1,0 +1,178 @@
+[
+  {
+    "phase": "after",
+    "entry": "button",
+    "size": "desktop",
+    "scheme": "light",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "file": "after-button-desktop-light.png",
+    "buttonBox": {
+      "x": 408.546875,
+      "y": 467,
+      "width": 128.890625,
+      "height": 25
+    },
+    "headings": [],
+    "errors": []
+  },
+  {
+    "phase": "after",
+    "entry": "button",
+    "size": "desktop",
+    "scheme": "dark",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "file": "after-button-desktop-dark.png",
+    "buttonBox": {
+      "x": 419.03125,
+      "y": 467,
+      "width": 107.921875,
+      "height": 25
+    },
+    "headings": [],
+    "errors": []
+  },
+  {
+    "phase": "after",
+    "entry": "button",
+    "size": "mobile",
+    "scheme": "light",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "file": "after-button-mobile-light.png",
+    "buttonBox": {
+      "x": 123.109375,
+      "y": 167,
+      "width": 143.765625,
+      "height": 25
+    },
+    "headings": [],
+    "errors": []
+  },
+  {
+    "phase": "after",
+    "entry": "button",
+    "size": "mobile",
+    "scheme": "dark",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "file": "after-button-mobile-dark.png",
+    "buttonBox": {
+      "x": 135.5,
+      "y": 167,
+      "width": 118.984375,
+      "height": 25
+    },
+    "headings": [],
+    "errors": []
+  },
+  {
+    "phase": "after",
+    "entry": "nested",
+    "size": "desktop",
+    "scheme": "light",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "file": "after-nested-desktop-light.png",
+    "buttonBox": {
+      "x": 140.578125,
+      "y": 579.25,
+      "width": 120.53125,
+      "height": 24
+    },
+    "headings": [
+      "Deeply nested components",
+      "1 · Functional root",
+      "2 · Classic container",
+      "3 · Functional child through the classic container",
+      "4 · Direct functional child"
+    ],
+    "errors": []
+  },
+  {
+    "phase": "after",
+    "entry": "nested",
+    "size": "desktop",
+    "scheme": "dark",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "file": "after-nested-desktop-dark.png",
+    "buttonBox": {
+      "x": 140.578125,
+      "y": 579.25,
+      "width": 101.21875,
+      "height": 24
+    },
+    "headings": [
+      "Deeply nested components",
+      "1 · Functional root",
+      "2 · Classic container",
+      "3 · Functional child through the classic container",
+      "4 · Direct functional child"
+    ],
+    "errors": []
+  },
+  {
+    "phase": "after",
+    "entry": "nested",
+    "size": "mobile",
+    "scheme": "light",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "file": "after-nested-mobile-light.png",
+    "buttonBox": {
+      "x": 33,
+      "y": 563.9375,
+      "width": 137.71875,
+      "height": 24
+    },
+    "headings": [
+      "Deeply nested components",
+      "1 · Functional root",
+      "2 · Classic container",
+      "3 · Functional child through the classic container",
+      "4 · Direct functional child"
+    ],
+    "errors": []
+  },
+  {
+    "phase": "after",
+    "entry": "nested",
+    "size": "mobile",
+    "scheme": "dark",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "file": "after-nested-mobile-dark.png",
+    "buttonBox": {
+      "x": 33,
+      "y": 563.9375,
+      "width": 114.890625,
+      "height": 24
+    },
+    "headings": [
+      "Deeply nested components",
+      "1 · Functional root",
+      "2 · Classic container",
+      "3 · Functional child through the classic container",
+      "4 · Direct functional child"
+    ],
+    "errors": []
+  }
+]
