@@ -7,6 +7,7 @@ import Radio                 from '../../../../src/form/field/Radio.mjs';
 import TextField             from '../../../../src/form/field/Text.mjs';
 
 /**
+ * @summary Presents the functional button and its editable configs.
  * @class Neo.examples.functional.button.base.MainContainer
  * @extends Neo.examples.ConfigurationViewport
  */
@@ -178,17 +179,19 @@ class MainContainer extends ConfigurationViewport {
     }
 
     /**
+     * @summary Creates a button whose badge counts clicks in this example.
      * @returns {Neo.component.Base}
      */
     createExampleComponent() {
+        let clicks = 0;
+
         return Neo.create({
             module   : FunctionalButton,
-            badgeText: 'Badge',
+            badgeText: '0',
             flex     : 'none',
-            handler  : data => console.log('button click =>', data.component.id),
+            handler  : ({component}) => component.badgeText = String(++clicks),
             height   : 50,
             iconCls  : 'fa fa-home',
-            style    : {marginBottom: '1500px', marginTop: '500px'},
             text     : 'Hello World',
             ui       : 'primary',
             width    : 150

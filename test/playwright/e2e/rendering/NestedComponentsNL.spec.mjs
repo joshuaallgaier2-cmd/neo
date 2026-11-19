@@ -15,6 +15,16 @@ test('nested functional and classic components propagate root state without repl
         return !!root?.properties.mounted && !!relay?.properties.mounted && leaves.length === 2 &&
             leaves.every(leaf => leaf.properties.mounted)
     }).toBe(true);
+    const rootNode = page.locator(`[id="${root.id}"]`);
+    await expect(rootNode.getByRole('heading')).toHaveText([
+        'Deeply nested components',
+        '1 · Functional root',
+        '2 · Classic container',
+        '3 · Functional child through the classic container',
+        '4 · Direct functional child'
+    ]);
+    await expect(rootNode.getByText('Change the root values in the Inspector, then apply them. Each child keeps its own click count.'))
+        .toBeVisible();
     expect(relay.properties.parentId).toBe(root.id);
     const nested   = leaves.find(leaf => leaf.properties.parentId === relay.id),
         direct     = leaves.find(leaf => leaf.properties.parentId === root.id),
@@ -65,3 +75,22 @@ test('nested functional and classic components propagate root state without repl
         expect(await app.queryComponent({id})).toEqual([])
     }
 });
+
+for (const viewport of [{width: 1440, height: 900}, {width: 390, height: 844}]) {
+    for (const theme of ['neo-theme-light', 'neo-theme-dark']) {
+        test(`functional button counts clicks at ${viewport.width}×${viewport.height} in ${theme}`, async ({page, neuralLink}) => {
+            await page.setViewportSize(viewport);
+            await neuralLink.routeConfig(page, config => ({...config, themes: [theme], useAiClient: true, useServiceWorker: false}));
+            await page.goto('/examples/functional/button/base/index.html');
+            await neuralLink.connectToApp('Neo.examples.functional.button.base');
+            const button = page.getByRole('button', {name: /Hello World/});
+            await expect(button).toBeInViewport({timeout: 3000});
+            await expect(button.locator('.neo-button-badge')).toHaveText('0', {timeout: 3000});
+            await button.click();
+            await expect(button.locator('.neo-button-badge')).toHaveText('1');
+            await button.click();
+            await expect(button.locator('.neo-button-badge')).toHaveText('2');
+            await page.screenshot({path: test.info().outputPath('functional-button.png')});
+        });
+    }
+}
